@@ -1,7 +1,7 @@
 # 作業ブランチメモ
 
 - ブランチ: adopt-note-numbering-and-pr-tool-name-updates
-- PR: 未作成
+- PR: #225
 - 最終更新: 2026-09-12
 
 ## 目的

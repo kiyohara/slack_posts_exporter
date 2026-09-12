@@ -60,7 +60,7 @@ Step 5 と Step 10 で列挙済みの stale 表現は、次の定型で置換す
 
 #### 2. 本 skill の実行で完了するタスク行
 
-`## 次にやること` など未完タスクを列挙するセクションにある、本 skill の実行で完了する行を対象とする。例:「PR 作成」「採番後に note rename」「PR 作成後に note を `<PR-number>_...md` へ rename する」「採番後に `progress.md` の PR 番号を反映する」。
+`## 次にやること` など未完タスクを列挙するセクションにある、本 skill の実行で完了する行を対象とする。例:「PR 作成」「採番後に note rename」「PR 作成後に note を `<PR-number>_...md` へ rename する」。
 
 - `draft_` を含まず `<PR-number>_...` や `<PR 番号>_...` のような placeholder で書かれた行も対象とする。Step 5 / Step 10 のファイル名置換は `draft_<escaped-branch>` にしか反応しないため、この形式の行は置換だけでは処理されない。
 - Step 5 でファイル名だけを新名へ機械置換すると、「これから採番する」という文意の行が新名のまま残り、自己矛盾する。置換した行が本項の対象に該当しないかを必ず確認する。
@@ -73,7 +73,9 @@ Step 5 と Step 10 で列挙済みの stale 表現は、次の定型で置換す
 
 行は削除しない。note は作業ログであり、どのタスクが採番時点で完了済みだったかを残すためである。
 
-本 skill の実行では完了しないタスク(review 対応、merge 待ち、後続 Issue への着手など)は対象外とする。
+本 skill の実行では完了しないタスク(review 対応、merge 待ち、後続 Issue への着手など)は対象外とする。`progress.md` の PR 番号反映もこれに含まれる。Step 7 が commit 対象を `working-branch-notes/` 配下に限定しているとおり、本 skill は `progress.md` を更新しない(索引表の更新は `doc/guidelines/issue-driven-task-execution.md` の手順で行う)。
+
+1 行に本 skill で完了する要素と完了しない要素が混在する行(例:「PR を作成し、採番後に note rename と `progress.md` の PR 番号反映を行う」)は、行全体を完了扱いにしない。未完了の部分が隠れるためである。この種の行は触らず、終了時に報告する。
 
 #### 共通の扱い
 

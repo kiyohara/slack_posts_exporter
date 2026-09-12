@@ -26,6 +26,8 @@ Issue #224。類似プロジェクト asahimaru の PR #725 / #726 で入った 
 - decision log は tool 名の範囲変更(項目 2)についてのみ作成した。項目 1 は skill の検出範囲の調整であり、方針の変更・撤回にはあたらないため作らない。
 - 既存 note に残る stale 行(`5_` / `9_` / `10_` / `11_` / `12_` / `13_` / `14_` / `58_` / `185_`)は修正しない。`working-branch-notes-handling.md` のメンテコスト判断に従い据え置く。asahimaru 側も同じ扱い。
 - `.cursor/rules/` と `.claude/rules/` の PR guideline 入口 shim は正本へのポインタのみで禁止内容を持たないため変更不要と判断した。
+- review 指摘(P2)を受け、完了タスク行の例から「採番後に `progress.md` の PR 番号を反映する」を削除した。本 skill は Step 7 で commit 対象を `working-branch-notes/` 配下に限定しており、`progress.md` は更新しない。この例を残すと、実際には未更新のタスクへ `(完了)` を付けることになる。
+- あわせて、1 行に本 skill で完了する要素と完了しない要素が混在する行(`58_v1-16-final-e2e.md:25` の「PR を作成し、採番後に note rename と `progress.md` の PR 番号反映を行う」など)は行全体を完了扱いにせず、触らずに報告する扱いを明記した。未完了部分が隠れるのを防ぐため。
 
 ## 次にやること
 
@@ -49,3 +51,4 @@ Issue #224。類似プロジェクト asahimaru の PR #725 / #726 で入った 
 ## セッションログ
 
 - 2026-09-12: asahimaru の PR #725 / #726 を調査し、Issue #224 を作成。skill / guideline / decision log の変更を実施した。
+- 2026-09-12: Codex review(review cycle `codex-15d49ea-20260912023609`)の P2 指摘 1 件に対応し、完了タスク行の対象から `progress.md` 更新を除外、複合行の扱いを明記した。
